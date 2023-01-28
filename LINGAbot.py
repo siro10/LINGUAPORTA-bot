@@ -40,16 +40,10 @@ def login():
 
     for i in range(0, 3):
         try:
-            """
             print("IDを入力")
             uid = input()
             print("パスワードを入力")
             uPassword = input()
-            """
-
-            uid = str('i32101')
-            uPassword = ('ringo120')
-
 
             id = driver.find_element(By.XPATH, '//*[@id="content-login"]/form/table/tbody/tr[1]/td/input')
             password = driver.find_element(By.XPATH, '//*[@id="content-login"]/form/table/tbody/tr[2]/td/input')
