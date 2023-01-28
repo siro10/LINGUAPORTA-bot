@@ -1,17 +1,16 @@
 import sys
 from time import sleep
 from selenium import webdriver
-from selenium.webdriver.chrome import service
+import chromedriver_binary
 from selenium.webdriver.common.by import By
 
 #ネットワーク読み込み待機時間
 sleepTime = 1
-#ChromeDriverのパスを設定
-CHROMEDRIVER = "!!!ここにchromedriver.exeのパスを入力!!!"
-#ChromeDriverのstartとstopを制御するServiceオブジェクトを介してパスを渡す
-chrome_service = service.Service(executable_path=CHROMEDRIVER)
+# chromeDriverオプション設定(エラーメッセージ削除)
+options = webdriver.ChromeOptions() 
+options.add_experimental_option('excludeSwitches', ['enable-logging'])
 #Chromeを起動
-driver = webdriver.Chrome(service=chrome_service)
+driver = webdriver.Chrome(options=options)
 
 
 def main():
